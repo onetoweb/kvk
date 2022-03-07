@@ -4,7 +4,6 @@ namespace Onetoweb\Kvk;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\RequestOptions;
-use DateTime;
 
 /**
  * Kvk Api v2 client.
@@ -18,7 +17,7 @@ class Client
      * Base Uris
      */
     const BASE_URI_LIVE = 'https://api.kvk.nl/api/v2/';
-    const BASE_URI_TEST = 'https://api.kvk.nl/api/v2/test';
+    const BASE_URI_TEST = 'https://api.kvk.nl/api/v2/test/';
     
     /**
      * @var string
@@ -55,7 +54,7 @@ class Client
     /**
      * @param array $query = []
      * 
-     * @return array
+     * @return array|null
      */
     public function searchCompanies(array $query = []): ?array
     {
@@ -65,7 +64,7 @@ class Client
     /**
      * @param array $query = []
      * 
-     * @return array
+     * @return array|null
      */
     public function profileCompanies(array $query = []): ?array
     {
@@ -76,7 +75,7 @@ class Client
      * @param string $endpoint
      * @param array $query = []
      * 
-     * @return array
+     * @return array|null
      */
     public function request(string $endpoint, array $query = []): ?array
     {
@@ -100,7 +99,7 @@ class Client
         ]);
         
         // make request
-        $response = $guzzleClient->request('GET', $this->getBaseUri() . $endpoint, $options);
+        $response = $guzzleClient->get($this->getBaseUri() . $endpoint, $options);
         
         // get contents
         $contents = $response
