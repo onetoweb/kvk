@@ -1,10 +1,11 @@
 {
 	"name" : "onetoweb/kvk",
-	"description" : "Kvk API v2 Client",
+	"description" : "Kvk Search Api Client",
 	"keywords" : [
 		"api",
 		"php",
-		"kvk"
+		"kvk",
+		"search"
 	],
 	"type" : "library",
 	"homepage" : "https://github.com/onetoweb/kvk",

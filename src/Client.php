@@ -6,7 +6,7 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\RequestOptions;
 
 /**
- * Kvk Api v2 client.
+ * Kvk Search Api Client.
  *
  * @author Jonathan van 't Ende <jvantende@onetoweb.nl>
  * @copyright Onetoweb B.V.
@@ -16,8 +16,8 @@ class Client
     /**
      * Base Uris
      */
-    const BASE_URI_LIVE = 'https://api.kvk.nl/api/v2/';
-    const BASE_URI_TEST = 'https://api.kvk.nl/api/v2/test/';
+    const BASE_URI_LIVE = 'https://api.kvk.nl/api/v1/';
+    const BASE_URI_TEST = 'https://api.kvk.nl/test/api/v1/';
     
     /**
      * @var string
@@ -53,22 +53,12 @@ class Client
     
     /**
      * @param array $query = []
-     * 
+     *
      * @return array|null
      */
-    public function searchCompanies(array $query = []): ?array
+    public function search(array $query = []): ?array
     {
-        return $this->request('search/companies', $query);
-    }
-    
-    /**
-     * @param array $query = []
-     * 
-     * @return array|null
-     */
-    public function profileCompanies(array $query = []): ?array
-    {
-        return $this->request('profile/companies', $query);
+        return $this->request('zoeken', $query);
     }
     
     /**
@@ -95,7 +85,7 @@ class Client
         
         // get guzzle client
         $guzzleClient = new GuzzleClient([
-            'http_errors' => false,
+            RequestOptions::HTTP_ERRORS => false,
         ]);
         
         // make request

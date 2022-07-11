@@ -1,4 +1,4 @@
-# Onetoweb Kvk v2 Client
+# Kvk Search Api Client
 
 ## Installing
 
@@ -8,4 +8,4 @@ composer require onetoweb/kvk
 
 ## Usage
 
-See example.php
+See [example.php](/example.php)
