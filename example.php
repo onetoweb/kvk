@@ -23,7 +23,7 @@ $results = $client->search([
     'huisnummer' => '',
     'huisnummerToevoeging' => '',
     'type' => 'hoofdvestiging',
-    'InclusiefInactieveRegistraties' => false,
+    'InclusiefInactieveRegistraties' => 'false',
     'pagina' => 1,
     'aantal' => 10,
 ]);
