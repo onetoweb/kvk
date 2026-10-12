@@ -1,30 +1,31 @@
 {
-	"name" : "onetoweb/kvk",
-	"description" : "Kvk Search Api Client",
-	"keywords" : [
-		"api",
-		"php",
-		"kvk",
-		"search"
-	],
-	"type" : "library",
-	"homepage" : "https://github.com/onetoweb/kvk",
-	"license" : "MIT",
-	"authors" : [{
-			"name" : "Jonathan van 't Ende",
-			"email" : "jvantende@onetoweb.nl"
-		}
-	],
-	"require" : {
-		"php" : ">=7.1.0",
-		"guzzlehttp/guzzle" : "^6.0 || ^7.0"
-	},
-	"require-dev" : {
-		"symfony/error-handler" : "^5.1"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"Onetoweb\\Kvk\\" : "src/"
-		}
-	}
+    "name": "onetoweb/fetcher",
+    "description": "Kvk Search Api Client",
+    "keywords": [
+        "api",
+        "php",
+        "kvk",
+        "search"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/onetoweb/kvk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan van 't Ende",
+            "email": "jvantende@onetoweb.nl"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "guzzlehttp/guzzle" : "^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "symfony/error-handler": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Onetoweb\\Kvk\\": "src/"
+        }
+    }
 }

@@ -4,6 +4,7 @@ namespace Onetoweb\Kvk;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\RequestOptions;
+use Onetoweb\Kvk\Config\BaseUri;
 
 /**
  * Kvk Search Api Client.
@@ -14,29 +15,17 @@ use GuzzleHttp\RequestOptions;
 class Client
 {
     /**
-     * Base Uris
-     */
-    const BASE_URI_LIVE = 'https://api.kvk.nl/api/v1/';
-    const BASE_URI_TEST = 'https://api.kvk.nl/test/api/v1/';
-    
-    /**
-     * @var string
-     */
-    private $apiKey;
-    
-    /**
-     * @var bool
-     */
-    private $testModus;
-    
-    /**
      * @param string $apiKey
      * @param bool $testModus = false
      */
-    public function __construct(string $apiKey, bool $testModus = false)
-    {
-        $this->apiKey = $apiKey;
-        $this->testModus = $testModus;
+    public function __construct(
+        
+        #[\SensitiveParameter]
+        private string $apiKey,
+        
+        private bool $testModus = false
+    ) {
+        
     }
     
     /**
@@ -45,9 +34,9 @@ class Client
     private function getBaseUri(): string
     {
         if ($this->testModus) {
-            return self::BASE_URI_TEST;
+            return BaseUri::TEST->value;
         } else {
-            return self::BASE_URI_LIVE;
+            return BaseUri::LIVE->value;
         }
     }
     
